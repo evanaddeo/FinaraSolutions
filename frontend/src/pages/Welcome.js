@@ -1,6 +1,8 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { FONTS } from '../constants/themes.js'
+
 function Welcome() {
     const navi = useNavigate();
 

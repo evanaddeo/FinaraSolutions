@@ -16,7 +16,7 @@ export const SIZES = {
 };
 
 export const FONTS = {
-    primary: 'Arial',
+    primary: 'Roboto-Black, sans-serif',
     secondary: 'Arial',
     tertiary: 'Arial'
 };
