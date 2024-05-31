@@ -1,0 +1,30 @@
+.hdrBody {
+    display: flex;
+    flex-direction: row;
+    height: 10vh;
+    padding: .2vw 6vw .2vw 5vw;
+}
+
+.hdrNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hdrProfile {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navBtn {
+    padding-left: 6%;
+    padding-top: 1%;
+}
+
+#hdrTitle {
+    padding-left: .6vw;
+    padding-right: 3.5vw;
+}
