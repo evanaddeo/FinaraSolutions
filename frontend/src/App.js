@@ -4,7 +4,6 @@ import Home from './pages/Home'
 import Welcome from './pages/Welcome'
 import Login from './pages/Login'
 import Signup from './pages/Signup'
-import { COLORS } from './constants/themes.js'
 
 function App() {
 
