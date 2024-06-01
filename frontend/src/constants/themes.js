@@ -7,12 +7,13 @@ export const COLORS = {
 };
 
 export const SIZES = {
-    xsmall: '.5em',
-    small: '1.1em',
-    medium: '1.5em',
-    large: '2em',
-    xlarge: '2.5em',
-    xxlarge: '3em'
+    xxsmall: '.5rem',
+    xsmall: '.75rem',
+    small: '1rem',
+    medium: '1.15rem',
+    large: '1.5rem',
+    xlarge: '1.75rem',
+    xxlarge: '2.5rem',
 };
 
 export const FONTS = {

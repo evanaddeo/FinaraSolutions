@@ -74,4 +74,20 @@
 .logo {
     width: 5vw;
     height: 4.5vw;
+    margin-bottom: -5px;
+}
+
+.mainBtn {
+    background-color: #2b2c34;
+    color: #eff0f3;
+    height: 5vh;
+    width: 9vw;
+    border-radius: 10px;
+    border: 0px solid green;
+}
+
+.mainBtn:hover {
+    background-color: transparent;
+    color: #2b2c34;
+    border: 3px solid #2b2c34;
 }
