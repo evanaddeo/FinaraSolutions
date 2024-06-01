@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { FONTS, SIZES, COLORS } from '../constants/themes'
 import '../styles/Header.css'
 
@@ -21,7 +21,7 @@ function Header(signedIn) {
                     <p className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.medium}}>Investing</p>
                 </div>
                 <div className='hdrProfile'>
-                    <p style={ {fontFamily: FONTS.Regular, fontSize: SIZES.medium}}>{button1Text}</p>
+                    <p style={ {fontFamily: FONTS.Regular}}>{button1Text}</p>
                     <button id='actionBtn' className='mainBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.medium}}>{button2Text}</button>
                 </div>
             </div>
