@@ -1,22 +1,24 @@
 export const COLORS = {
-    black: '2b2c34',
-    white: 'eff0f3',
-    blue1: '5089F9',
-    blue2: '4073FA',
-    blue3: '3361FB'
+    black: '#34353d',
+    white: '#eff0f3',
+    blue1: '#5089F9',
+    blue2: '#4073FA',
+    blue3: '#3361FB'
 };
 
 export const SIZES = {
-    xsmall: '',
-    small: '',
-    medium: '',
-    large: '',
-    xlarge: '',
-    xxlarge: ''
+    xxsmall: '.5rem',
+    xsmall: '.75rem',
+    small: '1rem',
+    medium: '1.15rem',
+    large: '1.5rem',
+    xlarge: '1.75rem',
+    xxlarge: '2.5rem',
 };
 
 export const FONTS = {
-    primary: 'Roboto-Black, sans-serif',
-    secondary: 'Arial',
-    tertiary: 'Arial'
+    Regular: 'Roboto-Regular, sans-serif',
+    Light: 'Roboto-Light, sans-serif',
+    Bold: 'Roboto-Bold, sans-serif',
+    Title: 'Public-Sans, sans-serif'
 };
