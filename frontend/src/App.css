@@ -63,13 +63,19 @@
 
 .container {
     background-color: #eff0F3;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 }
 
 .body {
     display: flex;
+    overflow: hidden;
 }
 
 .logo {
@@ -81,15 +87,34 @@
 .mainBtn {
     background-color: #2b2c34;
     color: #eff0f3;
-    height: 5vh;
-    width: 9vw;
+    height: 4.5vh;
+    width: 7vw;
     border-radius: 10px;
     border: 0px solid green;
-    font-size: 1.15rem;
+    font-size: 1rem;
 }
 
 .mainBtn:hover {
-    background-color: transparent;
-    color: #2b2c34;
-    border: 3px solid #2b2c34;
+    background-color: #3a3b44;
+}
+
+.secondBtn:hover {
+    color: #3a3b44;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Roboto-Regular';
+    font-size: 1rem;
+}
+
+input {
+    width: 45.5%;
+    height: 5vh;
+    border-radius: 10px;
+    border: 0px;
+    padding: 0px 0px 0px 12px;
+    background-color: #eff0f3;
+    margin-top: 2.5%;
 }
