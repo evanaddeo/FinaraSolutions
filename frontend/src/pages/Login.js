@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm'
 import DotGraphic from '../assets/images/DotGraphic.png'
 import CircleGraphic from '../assets/images/CircleGraphic.png'
 import Logo from '../assets/images/Logo2.png'
-import { FONTS, SIZES } from '../constants/themes.js'
+import { FONTS } from '../constants/themes.js'
 
 import '../styles/Login.css'
 
@@ -12,16 +12,17 @@ function Login() {
     const navi = useNavigate();
 
     return (
-        <div className='container'>
+        <div id='test' className='container'>
             <div id='loginHdr'>
-                <img className='logo' src={ Logo } />
-                <button className='mainBtn' style={{fontFamily: FONTS.Regular}}>Sign Up</button>
-                <p style={{fontFamily: FONTS.Regular, fontSize: SIZES.medium}}>Home</p>
-                <p style={{color: 'black'}}>Login</p>
-                <button onClick={ () => { navi('/Home') } }>Go to home</button>
+                <img className='logo' src={ Logo } alt='Logo'/>
+                <button id='signup' className='mainBtn' style={{fontFamily: FONTS.Regular}}>Sign Up</button>
+                <p 
+                    className="secondBtn"
+                    style={{fontFamily: FONTS.Regular}}
+                    onClick={() => {navi('/')}}>Home</p>
             </div>
-            <img id='dots' src={ DotGraphic } />
-            <img id='circle' src={ CircleGraphic } />
+            <img id='dots' src={ DotGraphic } alt='Dot Graphic'/>
+            <img id='circle' src={ CircleGraphic } alt='Circle Graphic'/>
 
             <LoginForm />
         </div>
