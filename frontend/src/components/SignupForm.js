@@ -1,15 +1,18 @@
 import React, { useState } from "react"
+import { useNavigate } from 'react-router-dom'
 import CustomDropdown from './CustomDropdown.js'
 import { usStates, countries } from '../constants/placeLists.js'
 import BudgetWoman from '../assets/images/budgetwoman.jpg'
 import { FONTS, SIZES } from '../constants/themes'
-import { updateDropdown1, updateDropdown2, loginAuth } from '../utils/auth.js'
+import { updateDropdown1, updateDropdown2, signupAuth } from '../utils/auth.js'
 
 import WhiteLogo from '../assets/images/WhiteLogo.png'
 
 import '../styles/LoginForm.css'
 
-function LoginForm() {
+function SignupForm() {
+
+    const navi = useNavigate();
 
     const [first, setFirst] = useState('');
     const [last, setLast] = useState('');
@@ -28,13 +31,13 @@ function LoginForm() {
 
     return (
         <div id='formContainer'>
-
             <div style={{flex: .5, backgroundColor: 'white', borderRadius: '15px 0px 0px 15px'}}>
                 <img id='budgetWoman' src={BudgetWoman} alt='Budget Woman'/>
             </div>
 
             <div id='loginWrapper'>
 
+                {/* Comment */}
                 <p style={{fontSize: '.9rem'}}id='welcome'>WELCOME TO</p>
                 <div id='titleContainer'>
                     <img style={{marginLeft: '-1vw'}}className='smallLogo' src={ WhiteLogo } alt='white logo' />
@@ -113,27 +116,25 @@ function LoginForm() {
                             />
                         </div>
                     </div>
-
                 </form>
 
                 <button 
                     id='submitter' 
                     type='submit' 
                     className='mainBtn'
-                    onClick={handleSubmit}>Log In
+                    onClick={handleSubmit}>Sign Up
                 </button>
 
-                <p style={{color: '#dadbde'}}>Don't have an account? 
+                <p style={{color: '#dadbde'}}>Already have an account? 
                     <a 
                         style={{fontWeight: 'bold', color: '#eff0f3'}}
                         cursor= 'pointer'
-                        onClick={ () => { navigator('/Signup') }}> Sign Up Now.
+                        onClick={() => { navi('/Login') }}> Log In Now.
                     </a>
                 </p>
-
             </div>
         </div>
     )
 }
 
-export default LoginForm
+export default SignupForm

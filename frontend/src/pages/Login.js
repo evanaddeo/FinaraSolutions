@@ -15,12 +15,16 @@ function Login() {
         <div id='test' className='container'>
             <div id='loginHdr'>
                 <img className='logo' src={ Logo } alt='Logo'/>
-                <button id='signup' className='mainBtn' style={{fontFamily: FONTS.Regular}}>Sign Up</button>
-                <p 
-                    className="secondBtn"
+
+                <button 
+                    id='signup' 
+                    className='mainBtn' 
                     style={{fontFamily: FONTS.Regular}}
-                    onClick={() => {navi('/')}}>Home</p>
+                    onClick={ () => { navi('/Signup') }}>Sign Up
+                </button>
+                <p className="secondBtn" onClick={() => {navi('/')}}>Home</p>
             </div>
+
             <img id='dots' src={ DotGraphic } alt='Dot Graphic'/>
             <img id='circle' src={ CircleGraphic } alt='Circle Graphic'/>
 
