@@ -6,7 +6,7 @@ import CircleGraphic from '../assets/images/CircleGraphic.png'
 import Logo from '../assets/images/Logo2.png'
 import { FONTS } from '../constants/themes.js'
 
-import '../styles/Login.css'
+import '../styles/LoginSignup.css'
 
 function Login() {
     const navi = useNavigate();

@@ -124,3 +124,7 @@ input {
     background-color: #eff0f3;
     margin-top: 2.5%;
 }
+
+.errNoti {
+    font-family: 'Roboto-Regular';
+}

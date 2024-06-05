@@ -7,7 +7,7 @@ import { updateDropdown1, updateDropdown2, loginAuth } from '../utils/auth.js'
 
 import WhiteLogo from '../assets/images/WhiteLogo.png'
 
-import '../styles/LoginForm.css'
+import '../styles/LoginSignupForm.css'
 
 function LoginForm() {
 
@@ -20,7 +20,7 @@ function LoginForm() {
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
 
-    // Handle Submission by "Sign Up" Button
+    // Handle Submission by "Log In" Button
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('Confirmed');

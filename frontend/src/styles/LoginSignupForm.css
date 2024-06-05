@@ -69,3 +69,24 @@ a:hover {
     margin-bottom: -5px;
     margin-top: -2px;
 }
+
+.invalid {
+    animation: shake 1000ms;
+    box-shadow: 0 0 0.8rem #ff0000;
+}
+
+.wrongEntry {
+    box-shadow: 0 0 0.8rem #ff0000;
+}
+
+@keyframes shake {
+    10% { transform: translateX(4px); }
+    20% { transform: translateX(-4px); }
+    30% { transform: translateX(4px); }
+    40% { transform: translateX(-4px); }
+    50% { transform: translateX(4px); }
+    60% { transform: translateX(-4px); }
+    70% { transform: translateX(4px); }
+    80% { transform: translateX(-4px); }
+    90% { transform: translateX(4px); }
+}
