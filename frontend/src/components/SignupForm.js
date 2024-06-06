@@ -6,9 +6,13 @@ import BudgetWoman from '../assets/images/budgetwoman.jpg'
 import { FONTS, SIZES } from '../constants/themes'
 import { updateDropdown1, updateDropdown2, signupAuth } from '../utils/auth.js'
 
+import { Store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import 'animate.css/animate.min.css';
+
 import WhiteLogo from '../assets/images/WhiteLogo.png'
 
-import '../styles/LoginForm.css'
+import '../styles/LoginSignupForm.css'
 
 function SignupForm() {
 
@@ -23,10 +27,76 @@ function SignupForm() {
     const [state, setState] = useState('');
     const [country, setCountry] = useState('');
 
+    const [wrongEntry, setWrongEntry] = useState('');
+
     // Handle Submission by "Sign Up" Button
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Confirmed');
+
+        const signupInfo = {
+            firstName: first,
+            lastName: last,
+            email: email,
+            phoneNumber: phone,
+            password: password,
+            confirmPassword: confirmPassword,
+            state: state,
+            country: country,
+        };
+
+        if (wrongEntry.length > 0) { 
+            document.getElementById(wrongEntry).classList.remove('wrongEntry'); 
+        }
+
+        const result = signupAuth(signupInfo);
+
+        if (result.success) {
+            // Continue correctly
+        } else {
+            errorShake(result.msg, result.failField);
+        }
+    }
+
+    // Adds shake animation & red drop shadow to incorrect input field
+    //
+    // @param msg: Message to be displayed in error notification
+    // @param failField: input field id where error occurred
+    const errorShake = (msg, failField) => {
+
+        if(failField.length > 0) {
+            const incorrect = document.getElementById(failField);
+            incorrect.classList.add('invalid')
+            incorrect.classList.add('wrongEntry')
+            setWrongEntry(failField);
+
+            incorrect.addEventListener('animationend', () => {
+                incorrect.classList.remove('invalid');
+            })
+        }
+
+        let errTitle = 'Error';
+        let errMsg = '';
+
+        if (msg.length < 30) {
+            errTitle = `Error: ${msg}`;
+        } else {
+            errMsg = msg;
+        }
+
+        Store.addNotification({
+            title: errTitle,
+            message: errMsg,
+            type: "danger",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated animate__fadeOut"],
+            dismiss: {
+              duration: 3000,
+              onScreen: true,
+              showIcon: true,
+            }
+          });
     }
 
     return (
@@ -37,7 +107,6 @@ function SignupForm() {
 
             <div id='loginWrapper'>
 
-                {/* Comment */}
                 <p style={{fontSize: '.9rem'}}id='welcome'>WELCOME TO</p>
                 <div id='titleContainer'>
                     <img style={{marginLeft: '-1vw'}}className='smallLogo' src={ WhiteLogo } alt='white logo' />
@@ -47,19 +116,22 @@ function SignupForm() {
 
                 <form onSubmit={handleSubmit} name='myForm'>
                     <input 
-                        style={{marginRight: '2.5%'}}
+                        id='first'
+                        style={{marginRight: '3.5%'}}
                         placeholder='First Name'
                         value={first}
                         onChange={(e) => setFirst(e.target.value)}
                         required
                     />
                     <input 
+                        id='last'
                         placeholder='Last Name'
                         value={last}
                         onChange={(e) => setLast(e.target.value)}
                         required
                     /><br></br>
                     <input 
+                        id='email'
                         style={{width: '96.5%'}}
                         type='email'
                         placeholder='Email Address'
@@ -68,14 +140,16 @@ function SignupForm() {
                         required
                     /><br></br>
                     <input 
+                        id='phone'
                         style={{width: '96.5%'}}
                         type='tel'
                         placeholder='Phone Number'
-                        value={phone}
+                        value={phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3')}
                         onChange={(e) => setPhone(e.target.value)}
                         required
                     /><br></br>
                     <input 
+                        id='password'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Password'
@@ -84,6 +158,7 @@ function SignupForm() {
                         required
                     /><br></br>
                     <input 
+                        id='confirmPassword'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Confirm Password'
@@ -127,8 +202,7 @@ function SignupForm() {
 
                 <p style={{color: '#dadbde'}}>Already have an account? 
                     <a 
-                        style={{fontWeight: 'bold', color: '#eff0f3'}}
-                        cursor= 'pointer'
+                        style={{fontWeight: 'bold', color: '#eff0f3', cursor: 'pointer'}}
                         onClick={() => { navi('/Login') }}> Log In Now.
                     </a>
                 </p>

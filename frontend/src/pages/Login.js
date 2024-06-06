@@ -6,13 +6,20 @@ import CircleGraphic from '../assets/images/CircleGraphic.png'
 import Logo from '../assets/images/Logo2.png'
 import { FONTS } from '../constants/themes.js'
 
-import '../styles/Login.css'
+import { ReactNotifications } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import 'animate.css/animate.min.css';
+
+import '../styles/LoginSignup.css'
 
 function Login() {
     const navi = useNavigate();
 
     return (
         <div id='test' className='container'>
+
+            <ReactNotifications className='errNoti'/>
+
             <div id='loginHdr'>
                 <img className='logo' src={ Logo } alt='Logo'/>
 

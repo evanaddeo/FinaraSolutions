@@ -8,7 +8,7 @@ function Welcome() {
 
     return (
         <div className='container'>
-            <Header signedIn={True}/>
+            <Header signedIn={true}/>
             <p>Welcome</p>
 
             <button onClick={ () => { navi('/Login') } }>Go to login</button>
