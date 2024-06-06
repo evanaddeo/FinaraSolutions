@@ -1,31 +1,21 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Home from './pages/Home'
+import Welcome from './pages/Welcome'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 function App() {
 
-    const [data, setData] = useState([{}])
-
-    useEffect(() => {
-        fetch("http://localhost:5000/members").then(
-            res => res.json()
-        ).then(
-            data => {
-                setData(data)
-                console.log(data)
-            }
-        )
-    }, [])
-
     return (
-        <div>
-
-            {(typeof data.members === 'undefined') ? (
-                <p>Loading...</p>
-            ) : (
-                data.members.map((member, i) => (
-                    <p key={i}>{member}</p>
-                ))
-            )}
-        </div>
+        <Router>
+            <Routes>
+                <Route exact path="/" element={ <Welcome /> } />
+                <Route path='/Home' element={ <Home /> } />
+                <Route path='Login' element={ <Login /> } />
+                <Route path='Signup' element={ <Signup /> } />
+            </Routes>
+        </Router>
     )
 }
 
