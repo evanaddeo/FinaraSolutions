@@ -1,9 +1,13 @@
 import React, { useState } from "react"
-import CustomDropdown from './CustomDropdown.js'
-import { usStates, countries } from '../constants/placeLists.js'
+import { useNavigate } from 'react-router-dom'
 import BudgetWoman from '../assets/images/budgetwoman.jpg'
 import { FONTS, SIZES } from '../constants/themes'
-import { updateDropdown1, updateDropdown2, loginAuth } from '../utils/auth.js'
+import { Checkbox } from 'primereact/checkbox'
+import { loginAuth } from '../utils/auth.js'
+
+import { Store } from 'react-notifications-component'
+import 'react-notifications-component/dist/theme.css'
+import 'animate.css/animate.min.css';
 
 import WhiteLogo from '../assets/images/WhiteLogo.png'
 
@@ -11,19 +15,68 @@ import '../styles/LoginSignupForm.css'
 
 function LoginForm() {
 
-    const [first, setFirst] = useState('');
-    const [last, setLast] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
-    const [state, setState] = useState('');
-    const [country, setCountry] = useState('');
+    const navi = useNavigate();
 
-    // Handle Submission by "Log In" Button
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const [checked, setChecked] = useState(false);
+    const [wrongEntry, setWrongEntry] = useState('');
+
+
+    // Handle Submission by "Sign Up" Button
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Confirmed');
+
+        const loginInfo = {
+            email: email,
+            password: password,
+        };
+
+        if (wrongEntry.length > 0) { 
+            document.getElementById(wrongEntry).classList.remove('wrongEntry'); 
+        }
+
+        const result = loginAuth(loginInfo);
+
+        if (result.success) {
+            // Continue correctly
+        } else {
+            errorShake(result.msg, result.failField);
+        }
+    }
+
+    // Adds shake animation & red drop shadow to incorrect input field
+    //
+    // @param msg: Message to be displayed in error notification
+    // @param failField: input field id where error occurred
+    const errorShake = (msg, failField) => {
+
+        if(failField.length > 0) {
+            const incorrect = document.getElementById(failField);
+            incorrect.classList.add('invalid')
+            incorrect.classList.add('wrongEntry')
+            setWrongEntry(failField);
+
+            incorrect.addEventListener('animationend', () => {
+                incorrect.classList.remove('invalid');
+            })
+        }
+
+        Store.addNotification({
+            title: 'Error',
+            message: msg,
+            type: "danger",
+            insert: "top",
+            container: "top-right",
+            animationIn: ["animate__animated", "animate__fadeIn"],
+            animationOut: ["animate__animated animate__fadeOut"],
+            dismiss: {
+              duration: 3000,
+              onScreen: true,
+              showIcon: true,
+            }
+          });
     }
 
     return (
@@ -35,44 +88,29 @@ function LoginForm() {
 
             <div id='loginWrapper'>
 
-                <p style={{fontSize: '.9rem'}}id='welcome'>WELCOME TO</p>
-                <div id='titleContainer'>
-                    <img style={{marginLeft: '-1vw'}}className='smallLogo' src={ WhiteLogo } alt='white logo' />
-                    <p style={{fontFamily: FONTS.Title, fontSize: SIZES.xxlarge, color: '#eff0f3'}}>Finara</p>
+                <div style={{display: 'flex', alignItems: 'center', marginBottom: '-1vh', marginTop: '10vh'}}>
+                    <img style={{marginLeft: '-1vw'}} className='xsmallLogo' src={ WhiteLogo } alt='white logo' />
+                    <p style={{fontFamily: FONTS.Regular, color: '#eff0f3', fontSize: '1.2rem'}}>Finara</p>
                 </div>
-                <p id='phrase' style={{fontSize: '.9rem'}}>Sign up to take control of your financial future today.</p>
+                    
+                <div id='titleContainer'>
+                    <p style={{fontFamily: FONTS.Title, fontSize: '4rem', color: '#eff0f3'}}>Log In</p>
+                </div>
+
+                <p id='phrase' style={{fontSize: '.9rem', marginBottom: '3vh', marginTop: '5vh'}}>Log in to stay on top of all your spending goals!</p>
 
                 <form onSubmit={handleSubmit} name='myForm'>
                     <input 
-                        style={{marginRight: '2.5%'}}
-                        placeholder='First Name'
-                        value={first}
-                        onChange={(e) => setFirst(e.target.value)}
-                        required
-                    />
-                    <input 
-                        placeholder='Last Name'
-                        value={last}
-                        onChange={(e) => setLast(e.target.value)}
-                        required
-                    /><br></br>
-                    <input 
+                        id='email'
                         style={{width: '96.5%'}}
                         type='email'
                         placeholder='Email Address'
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
-                    /><br></br>
+                    />
                     <input 
-                        style={{width: '96.5%'}}
-                        type='tel'
-                        placeholder='Phone Number'
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        required
-                    /><br></br>
-                    <input 
+                        id='password'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Password'
@@ -80,41 +118,30 @@ function LoginForm() {
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     /><br></br>
-                    <input 
-                        style={{width: '96.5%'}}
-                        type='password'
-                        placeholder='Confirm Password'
-                        value={confirmPassword}
-                        onChange={(e) => {
-                            setConfirmPassword(e.target.value)
-                            console.log({confirmPassword})
-                        }}
-                        required
-                    /><br></br>
-
-                    <div id='locationSelectors'>
-                        <div className='dropdownWrapper' id='dropdown1'>
-                            <CustomDropdown 
-                                options={usStates}
-                                value={state}
-                                onChange={(newValue) => setState(newValue)}
-                                required
-                                update={() => {updateDropdown1()}}
-                            />
-                        </div>
-                        <div style={{marginLeft: '2.5%'}}></div>
-                        <div className='dropdownWrapper' id='dropdown2'>
-                            <CustomDropdown 
-                                options={countries}
-                                value={country}
-                                onChange={(newValue) => setCountry(newValue)}
-                                required
-                                update={() => {updateDropdown2()}}
-                            />
-                        </div>
-                    </div>
 
                 </form>
+
+                <div id='loginOptions'>
+
+                    <div className='optionWrapper' style={{justifyContent: 'flex-start'}}>
+                        <Checkbox 
+                            id='check'
+                            onChange={(e) => {
+                                setChecked(e.checked)
+                            }} 
+                            checked={checked}
+                            style={{width: '2vw'}}>
+                        </Checkbox>
+                        <p style={{color: '#eff0f3', fontSize: '.9rem'}}>Remember Me</p>
+                    </div>
+
+                    <div className='optionWrapper' style={{justifyContent: 'flex-end'}}>
+                        <p><a style={{color: '#eff0f3', cursor: 'pointer', fontSize: '.9rem'}}>
+                            Forgot Password?</a>
+                        </p>
+
+                    </div>
+                </div>
 
                 <button 
                     id='submitter' 
@@ -125,9 +152,8 @@ function LoginForm() {
 
                 <p style={{color: '#dadbde'}}>Don't have an account? 
                     <a 
-                        style={{fontWeight: 'bold', color: '#eff0f3'}}
-                        cursor= 'pointer'
-                        onClick={ () => { navigator('/Signup') }}> Sign Up Now.
+                        style={{fontWeight: 'bold', color: '#eff0f3', cursor: 'pointer'}}
+                        onClick={ () => { navi('/Signup') }}> Sign Up Now.
                     </a>
                 </p>
 

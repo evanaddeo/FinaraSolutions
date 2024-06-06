@@ -117,7 +117,7 @@ function SignupForm() {
                 <form onSubmit={handleSubmit} name='myForm'>
                     <input 
                         id='first'
-                        style={{marginRight: '2.5%'}}
+                        style={{marginRight: '3.5%'}}
                         placeholder='First Name'
                         value={first}
                         onChange={(e) => setFirst(e.target.value)}
@@ -202,8 +202,7 @@ function SignupForm() {
 
                 <p style={{color: '#dadbde'}}>Already have an account? 
                     <a 
-                        style={{fontWeight: 'bold', color: '#eff0f3'}}
-                        cursor= 'pointer'
+                        style={{fontWeight: 'bold', color: '#eff0f3', cursor: 'pointer'}}
                         onClick={() => { navi('/Login') }}> Log In Now.
                     </a>
                 </p>

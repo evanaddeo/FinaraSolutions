@@ -87,5 +87,5 @@ export function signupAuth(signupInfo) {
 // @return msg: Error msg if necessary
 // @return failField: string indicating where login failed, if necessary
 export function loginAuth(loginInfo) {
-    // login auth
+    return {success: false, msg: 'No account exists with this email', failField: 'email'}
 };
