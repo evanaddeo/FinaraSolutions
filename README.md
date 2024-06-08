@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="./frontend/src/assets/images/logo2.png" alt="Logo" width="80" height="80">
+    <img src="[./frontend/src/assets/images/logo2.png](https://github.com/evanaddeo/BudgetApp/blob/main/frontend/src/assets/images/Logo2.png)" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Finara</h1>
