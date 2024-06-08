@@ -3,12 +3,14 @@ import Header from '../components/Header'
 import { useNavigate } from 'react-router-dom'
 import { SIZES } from '../constants/themes'
 
+import '../styles/Welcome.css'
+
 function Welcome() {
     const navi = useNavigate();
 
     return (
-        <div className='container'>
-            <Header signedIn={true}/>
+        <div className='container' style={{overflow: 'scroll'}}>
+            <Header signedIn={false}/>
             <p>Welcome</p>
 
             <button onClick={ () => { navi('/Login') } }>Go to login</button>
@@ -20,6 +22,27 @@ function Welcome() {
             <p style={{fontSize: SIZES.medium}}>medium</p>
             <p style={{fontSize: SIZES.large}}>large</p>
             <p style={{fontSize: SIZES.xlarge}}>xlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
+            <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
             <p style={{fontSize: SIZES.xxlarge}}>xxlarge</p>
         </div>
     )
