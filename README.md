@@ -4,11 +4,10 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="[./frontend/src/assets/images/logo2.png](https://github.com/evanaddeo/BudgetApp/blob/main/frontend/src/assets/images/Logo2.png)" alt="Logo" width="80" height="80">
-  </a>
-
-  <h1 align="center">Finara</h1>
+  <div>
+    <img src="./frontend/src/assets/images/Logo2.png)" alt="Logo" width="80" height="80">
+    <h1 align="center">Finara</h1>
+  </div>
 
   <p align="center">
     Helping users build a better financial future.
