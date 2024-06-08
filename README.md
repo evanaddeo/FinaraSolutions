@@ -50,8 +50,8 @@ Here's why:
 
 ### Built With
 
-* ![JavaScript][JavaScript]
-* ![Python][Python]
+* [![JavaScript][JavaScript]][JavaScript-url]
+* [![Python][Python]][Python-url]
 * [![React][React.js]][React-url]
 * [![Flask][Flask]][Flask-url]
 
@@ -81,6 +81,8 @@ Project Link: [https:link](http://link)
 [product-screenshot]: images/screenshot.png
 
 [JavaScript]: https://shields.io/badge/JavaScript-F7DF1E?logo=JavaScript&logoColor=000&style=for-the-badge
+[JavaScript-url]: [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://js.org/index.html)
+[Python-url]: https://www.python.org/
 [Python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
 [Flask]: https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white
 [Flask-url]: https://flask.palletsprojects.com/en/3.0.x/
