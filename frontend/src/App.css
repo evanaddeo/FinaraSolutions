@@ -62,7 +62,7 @@
 }
 
 .container {
-    background-color: #eff0F3;
+    background-color: #eff0f3;
     height: 100%;
     width: 100%;
     overflow: hidden;
@@ -92,9 +92,8 @@
 }
 
 .logo {
-    width: 5vw;
-    height: 4.5vw;
-    margin-bottom: -5px;
+    width: 3.2vw;
+    height: 2.7vw;
 }
 
 .mainBtn {

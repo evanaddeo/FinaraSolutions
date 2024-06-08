@@ -9,7 +9,7 @@ export const COLORS = {
 export const SIZES = {
     xxsmall: '.5rem',
     xsmall: '.75rem',
-    small: '1rem',
+    small: '.9rem',
     medium: '1.15rem',
     large: '1.5rem',
     xlarge: '1.75rem',
