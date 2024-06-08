@@ -4,10 +4,8 @@
 
 <br />
 <div align="center">
-  <div>
-    <img src="./frontend/src/assets/images/Logo2.png)" alt="Logo" width="80" height="80">
-    <h1 align="center">Finara</h1>
-  </div>
+
+<img src="./frontend/src/assets/images/Logo2.png" alt="Logo" width="85" height="80"><h1 style="font-size: 44px;">Finara</h1>
 
   <p align="center">
     Helping users build a better financial future.
