@@ -23,8 +23,11 @@ function Header({signedIn}) {
         if (signedIn) {
             document.getElementById('signup').classList.add('hideItem');
         } else {
+            console.log('should remove profile')
             document.getElementById('profile').classList.add('hideItem');
         }
+        console.log('finished onLoad')
+        console.log(signedIn)
     });
     
 
@@ -55,7 +58,7 @@ function Header({signedIn}) {
                     <button 
                         id='signUp' 
                         className='actionBtn' 
-                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small, marginLeft: '4%'}}
                         onClick={() => { navi('/Signup')}}>
                         Get Started
                     </button>

@@ -1,10 +1,10 @@
 .hdrBody {
     display: flex;
     flex-direction: row;
-    height: 8vh;
+    height: 65px;
     padding: .2vw 2vw .2vw 2vw;
-    background-color: rgba(255, 255, 255, .7);
-    backdrop-filter: blur(20px);
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(15px);
     border-radius: 100px;
     margin: 3vh 5vw 0vh 5vw;
     width: 85vw;
@@ -29,10 +29,10 @@
 
 .navBtn {
     display: flex;
-    width: 8vw;
+    width: 115px;
     background-color: #eff0f3;
     border-color: transparent;
-    height: 4.5vh;
+    height: 35px;
     border-radius: 50px;
     align-items: center;
     justify-content: center;
@@ -57,25 +57,4 @@
 .hdrIcon {
     color: '#34353d';
     margin-right: 6%;
-}
-
-.actionBtn {
-    display: flex;
-    width: 8vw;
-    background-color: #5089F9;
-    border-color: transparent;
-    height: 4.5vh;
-    border-radius: 50px;
-    align-items: center;
-    color: #eff0f3;
-    margin-left: 4%;
-    justify-content: center;
-}
-
-.actionBtn:hover {
-    background-color: #3361FB;
-}
-
-.hideItem {
-    display: none;
 }
