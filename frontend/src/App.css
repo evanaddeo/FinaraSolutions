@@ -110,6 +110,22 @@
     background-color: #3a3b44;
 }
 
+.actionBtn {
+    display: flex;
+    width: 115px;
+    background-color: #5089F9;
+    border-color: transparent;
+    height: 35px;
+    border-radius: 50px;
+    align-items: center;
+    color: #eff0f3;
+    justify-content: center;
+}
+
+.actionBtn:hover {
+    background-color: #3361FB;
+}
+
 .secondBtn:hover {
     color: #3a3b44;
     cursor: pointer;
@@ -137,4 +153,12 @@ input {
 
 form {
     width: 75%;
+}
+
+.secondaryTxt {
+    color: #3a3b44;
+}
+
+.hideItem {
+    display: none;
 }
