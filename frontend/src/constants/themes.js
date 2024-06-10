@@ -13,7 +13,8 @@ export const SIZES = {
     medium: '1.15rem',
     large: '1.5rem',
     xlarge: '1.75rem',
-    xxlarge: '2.9rem',
+    xxlarge: '2.25rem',
+    xxxlarge: '2.9rem',
 };
 
 export const FONTS = {
