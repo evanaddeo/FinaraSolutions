@@ -110,13 +110,14 @@ function SignupForm() {
                 <p style={{fontSize: '.9rem'}}id='welcome'>WELCOME TO</p>
                 <div id='titleContainer'>
                     <img style={{marginLeft: '-1vw'}}className='smallLogo' src={ WhiteLogo } alt='white logo' />
-                    <p style={{fontFamily: FONTS.Title, fontSize: SIZES.xxlarge, color: '#eff0f3'}}>Finara</p>
+                    <p style={{fontFamily: FONTS.Title, fontSize: '3rem', color: '#eff0f3'}}>Finara</p>
                 </div>
                 <p id='phrase' style={{fontSize: '.9rem'}}>Sign up to take control of your financial future today.</p>
 
                 <form onSubmit={handleSubmit} name='myForm'>
                     <input 
                         id='first'
+                        className='input'
                         style={{marginRight: '3.5%'}}
                         placeholder='First Name'
                         value={first}
@@ -125,6 +126,7 @@ function SignupForm() {
                     />
                     <input 
                         id='last'
+                        className='input'
                         placeholder='Last Name'
                         value={last}
                         onChange={(e) => setLast(e.target.value)}
@@ -132,6 +134,7 @@ function SignupForm() {
                     /><br></br>
                     <input 
                         id='email'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='email'
                         placeholder='Email Address'
@@ -141,6 +144,7 @@ function SignupForm() {
                     /><br></br>
                     <input 
                         id='phone'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='tel'
                         placeholder='Phone Number'
@@ -150,6 +154,7 @@ function SignupForm() {
                     /><br></br>
                     <input 
                         id='password'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Password'
@@ -159,6 +164,7 @@ function SignupForm() {
                     /><br></br>
                     <input 
                         id='confirmPassword'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Confirm Password'
@@ -197,7 +203,9 @@ function SignupForm() {
                     id='submitter' 
                     type='submit' 
                     className='mainBtn'
-                    onClick={handleSubmit}>Sign Up
+                    onClick={handleSubmit}
+                >
+                    Sign Up
                 </button>
 
                 <p style={{color: '#dadbde'}}>Already have an account? 

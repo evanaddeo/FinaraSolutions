@@ -37,7 +37,7 @@ function Header({signedIn}) {
 
                 <div className='hdrNav'>
                     <img className='logo' src={ Logo } alt='logo' />
-                    <p id="hdrTitle" style={ {fontFamily: FONTS.Title, fontSize: SIZES.large, fontWeight: 700, color: COLORS.black}}>Finara</p>
+                    <p id="hdrTitle" style={ {fontFamily: FONTS.Title, fontSize: '1.4rem', color: COLORS.black}}>Finara</p>
 
                     <button className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
                         <HomeIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>Home

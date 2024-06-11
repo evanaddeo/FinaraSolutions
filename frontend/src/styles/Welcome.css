@@ -7,13 +7,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid red;
-    margin: 50px 5vw 50px 5vw;
+    margin: 5vh 7vw 50px 7vw;
     padding: 10px;
 }
 
 .subsection {
-    border: 1px dotted red;
     display: flex;
     flex: 1;
     margin: 10px;
@@ -61,4 +59,115 @@
 .txt {
     margin: 0px;
     color: #eff0f3;
+}
+
+#infoContainer {
+    position: relative;
+    text-align: center;
+}
+
+#welcomeDots {
+    display: block;
+    margin: 0 auto;
+    width: 50vw;
+    opacity: 60%;
+}
+
+#infoBlock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28vw;
+    height: 67vh;
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.statBox {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    text-align: flex-start;
+    padding-left: 1vw;
+}
+
+.signupBottom {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 5px 9px 5px 9px;
+    border-radius: 30px;
+}
+
+#inputty {
+    width: 20vw;
+    height: 5vh;
+    border-radius: 10px;
+    padding: 0px 0px 0px 16px;
+    background-color: transparent;
+    border: 0px;
+}
+
+#inputty:focus {
+    outline: none;
+}
+
+#whiteMoney {
+    height: 25vh;
+    padding: 8% 5% 1% 5%;
+}
+
+.offer {
+    font-size: 1.3rem;
+    color: #eff0f3;
+}
+
+.quant {
+    font-size: 2.5rem;
+    color: white;
+}
+
+#featDisplay {
+    height: 20vh;
+}
+
+.featBtn {
+    background-color: rgba(255, 255, 255, .6);
+    backdrop-filter: blur(15px);
+    border: 0px;
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 3%;
+    height: 17vh;
+    display: flex;
+    align-items: center;
+    padding-right: 8%;
+}
+
+.featBtn:active {
+    width: 99%;
+    height: 16.5vh;
+    margin: .5% .5% 3.2% .5%;
+}
+
+.featBtn:hover {
+    border: 1px solid #3d69f8;
+    background-color: #79b3ff3b;
+    box-shadow: 0px 0px 2px #5089F9;
+}
+
+.featBtnInfo {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 0px;
+}
+
+.clickedBtn {
+    background-color: #79b3ff14;
+    border: 1px solid #5089F9;
 }
