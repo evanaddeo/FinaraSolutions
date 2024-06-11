@@ -1,3 +1,8 @@
+.hdr {
+    position: relative;
+    z-index: 5;
+}
+
 .hdrBody {
     display: flex;
     flex-direction: row;
@@ -6,8 +11,8 @@
     background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(15px);
     border-radius: 100px;
-    margin: 3vh 5vw 0vh 5vw;
-    width: 85vw;
+    margin: 3vh 7vw 0vh 7vw;
+    width: 81vw;
     position: fixed;
     /* box-shadow: 0 0 0.1rem #5089F9; */
 }
@@ -36,7 +41,7 @@
     border-radius: 50px;
     align-items: center;
     justify-content: center;
-    margin-right: 1%;
+    margin-right: 8px;
     padding-right: .5vw;
 }
 

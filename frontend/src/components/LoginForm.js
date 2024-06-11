@@ -102,6 +102,7 @@ function LoginForm() {
                 <form onSubmit={handleSubmit} name='myForm'>
                     <input 
                         id='email'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='email'
                         placeholder='Email Address'
@@ -111,6 +112,7 @@ function LoginForm() {
                     />
                     <input 
                         id='password'
+                        className='input'
                         style={{width: '96.5%'}}
                         type='password'
                         placeholder='Password'

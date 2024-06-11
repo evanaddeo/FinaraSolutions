@@ -2,8 +2,8 @@ export const COLORS = {
     black: '#34353d',
     white: '#eff0f3',
     blue1: '#5089F9',
-    blue2: '#4073FA',
-    blue3: '#3361FB'
+    blue2: '#3d69f8',
+    blue3: '#2756ef'
 };
 
 export const SIZES = {
@@ -14,7 +14,7 @@ export const SIZES = {
     large: '1.5rem',
     xlarge: '1.75rem',
     xxlarge: '2.25rem',
-    xxxlarge: '2.9rem',
+    xxxlarge: '3.3rem',
 };
 
 export const FONTS = {
