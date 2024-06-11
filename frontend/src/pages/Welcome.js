@@ -21,11 +21,42 @@ import '../styles/Welcome.css'
 function Welcome() {
     const navi = useNavigate();
 
-    const [iconColor, setIconColor] = useState('gray');
+    const [dashIconColor, setDashIconColor] = useState(COLORS.blue1);
+    const [metricIconColor, setMetricIconColor] = useState('gray');
+    const [aiIconColor, setAiIconColor] = useState('gray');
+    const [featSelected, setFeatSelected] = useState('dash')
+
+    // clicked == dash, metric, or ai
+    const updateFtButton = (clicked) => {
+
+        const currentFeat = document.getElementById(featSelected);
+        const clickedFeat = document.getElementById(clicked);
+
+        if (clicked === 'dash') {
+            setDashIconColor(COLORS.blue1);
+            setMetricIconColor('gray');
+            setAiIconColor('gray');
+
+        } else if (clicked === 'metric') {
+            setDashIconColor('gray');
+            setMetricIconColor(COLORS.blue1);
+            setAiIconColor('gray');
+
+        } else {    // Clicked == ai
+            setDashIconColor('gray');
+            setMetricIconColor('gray');
+            setAiIconColor(COLORS.blue1);
+        }
+
+        currentFeat.classList.remove('clickedBtn')
+        clickedFeat.classList.add('clickedBtn')
+        setFeatSelected(clicked)
+    };
 
     return (
         <div className='container' style={{overflow: 'scroll'}}>
             <Header signedIn={false}/>
+
 
             {/* Intro Hero Section*/}
             <div className='sectionContainer'>
@@ -87,36 +118,58 @@ function Welcome() {
                 </div>
             </div>
 
+
             {/* Product Features Section*/}
             <div className='sectionContainer'>
                 <div className='subsection' style={{alignItems: 'flex-start'}}>
 
-                    <p style={{fontSize: SIZES.xxlarge, fontFamily: FONTS.Title, color: COLORS.black}}>Product Features</p>
-                    <p className='secondaryTxt'>
+                    <p style={{fontSize: SIZES.xxlarge, fontFamily: FONTS.Title, color: COLORS.black, margin: '0px'}}>Product Features</p>
+                    <p className='secondaryTxt' style={{margin: '2% 0% 8% 0%'}}>
                         Customize your budget plan, analyze spend metrics, and get a snapshot of your financial status from your Desktop or mobile device.
                     </p>
 
-                    <button className='featBtn'>
-                        <DashboardIcon sx={{width: '1.3vw', color: {iconColor}}} className='hdrIcon'/>
+                    <button 
+                        className='featBtn clickedBtn'
+                        onClick={
+                            () => { updateFtButton('dash') }}
+                        id='dash'
+                    >
+                        <DashboardIcon sx={{width: '1.3vw', color: dashIconColor, margin: '0% 6% 0% 4%'}} className='hdrIcon'/>
                         <div className='featBtnInfo'>
-                            <p style={{margin: '0px'}}>Dashboard</p>
-                            <p className='secondaryTxt'>Dashboard</p>
+                            <p style={{margin: '0px', fontWeight: 'bold'}}>Dashboard</p>
+                            <p className='secondaryTxt' style={{margin: '2% 0% 0% 0%', fontSize: '.9rem'}}>
+                                Get a glimpse into your aggregate spending trends, budget alignment, and various insightful statistics.
+                            </p>
                         </div>
                     </button>
 
-                    <button className='featBtn'>
-                        <p>X</p>
+                    <button 
+                        className='featBtn'
+                        onClick={
+                            () => { updateFtButton('metric') }}
+                        id='metric'
+                    >
+                        <EqualizerIcon sx={{width: '1.3vw', color: metricIconColor, margin: '0% 6% 0% 4%'}} className='hdrIcon'/>
                         <div className='featBtnInfo'>
-                        <p style={{margin: '0px'}}>Advanced Metrics</p>
-                            <p className='secondaryTxt'>Advanced Metrics</p>
+                            <p style={{margin: '0px', fontWeight: 'bold'}}>Advanced Metrics</p>
+                            <p className='secondaryTxt' style={{margin: '2% 0% 0% 0%', fontSize: '.9rem'}}>
+                                Analyze trends, distributions, and key metrics providing a comprehensive spending overview.
+                            </p>
                         </div>
                     </button>
 
-                    <button className='featBtn'>
-                        <p>X</p>
+                    <button 
+                        className='featBtn'
+                        onClick={
+                            () => { updateFtButton('ai') }}
+                        id='ai'
+                    >
+                        <AutoAwesomeIcon sx={{width: '1.3vw', color: aiIconColor, margin: '0% 6% 0% 4%'}} className='hdrIcon'/>
                         <div className='featBtnInfo'>
-                            <p style={{margin: '0px'}}>AI Tools</p>
-                            <p className='secondaryTxt'>AI Tools</p>
+                            <p style={{margin: '0px', fontWeight: 'bold'}}>AI Tools</p>
+                            <p className='secondaryTxt' style={{margin: '2% 0% 0% 0%', fontSize: '.9rem'}}>
+                                Utilize AI-generated templates and strategies personalized to your habits and needs.
+                            </p>
                         </div>
                     </button>
 
@@ -127,15 +180,16 @@ function Welcome() {
                     </div>
                 </div>
             </div>
+            
 
             {/* Mobile App Section*/}
             <div className='sectionContainer'>
 
-                <img src={iPhone} alt='iPhone' className='subsection' />
+                <img src={iPhone} alt='iPhone' className='subsection'/>
 
-                <div className='subsection' style={{alignItems: 'flex-end', textAlign: 'right'}}>
-                    <p style={{fontSize: SIZES.xxlarge, fontFamily: FONTS.Title, color: COLORS.black}}>The Best App to Support Your <br></br>Financial Future</p>
-                    <p className='secondaryTxt'>
+                <div className='subsection' style={{alignItems: 'flex-end', textAlign: 'right', margin: '-8vh 7vw 0vw 0vw'}}>
+                    <p style={{fontSize: SIZES.xxlarge, fontFamily: FONTS.Title, color: COLORS.black, margin: '0% 0%'}}>The Best App to Support Your <br></br>Financial Future</p>
+                    <p className='secondaryTxt' style={{margin: '3% 0% 9% 0%'}}>
                         Don't let your on-the-go lifestyle get in the way of your budgeting <br></br>
                         goals. Add & edit expenses anywhere, anytime. 
                     </p>
@@ -172,8 +226,8 @@ function Welcome() {
             <div className='sectionContainer'>
                 <div className='subsection' style={{textAlign: 'center'}}>
 
-                    <p style={{fontSize: SIZES.xxxlarge, fontFamily: FONTS.Title, color: COLORS.black}}>Let's Spend <span style={{color: COLORS.blue1}}>Smart</span>.</p>
-                    <p className='secondaryTxt'>Explore our cutting-edge financial health services, delivering high-quality solutions tailored to your needs. <br></br>Elevate your experience with top-tier features from Finara.</p>
+                    <p style={{fontSize: SIZES.xxxlarge, fontFamily: FONTS.Title, color: COLORS.black, margin: '0px'}}>Let's Spend <span style={{color: COLORS.blue1}}>Smart</span>.</p>
+                    <p className='secondaryTxt' style={{margin: '1.5% 0% 3% 0%'}}>Explore our cutting-edge financial health services, delivering high-quality solutions tailored to your needs. <br></br>Elevate your experience with top-tier features from Finara.</p>
 
                     <div className='signupBottom'>
                         <input 

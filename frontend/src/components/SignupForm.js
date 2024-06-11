@@ -203,7 +203,9 @@ function SignupForm() {
                     id='submitter' 
                     type='submit' 
                     className='mainBtn'
-                    onClick={handleSubmit}>Sign Up
+                    onClick={handleSubmit}
+                >
+                    Sign Up
                 </button>
 
                 <p style={{color: '#dadbde'}}>Already have an account? 
