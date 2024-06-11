@@ -7,13 +7,11 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border: 1px solid red;
     margin: 5vh 7vw 50px 7vw;
     padding: 10px;
 }
 
 .subsection {
-    border: 1px dotted red;
     display: flex;
     flex: 1;
     margin: 10px;
@@ -101,7 +99,7 @@
     display: flex;
     align-items: center;
     background-color: white;
-    padding: 6px 10px 6px 10px;
+    padding: 5px 9px 5px 9px;
     border-radius: 30px;
 }
 
@@ -116,8 +114,6 @@
 
 #inputty:focus {
     outline: none;
-
-    color: #3d69f8;
 }
 
 #whiteMoney {
@@ -143,14 +139,35 @@
     background-color: rgba(255, 255, 255, .6);
     backdrop-filter: blur(15px);
     border: 0px;
-    width: 95%;
+    width: 100%;
     border-radius: 15px;
-    margin: 5px 0px 5px 0px;
-    height: 10vh;
+    margin-bottom: 3%;
+    height: 17vh;
     display: flex;
+    align-items: center;
+    padding-right: 8%;
+}
+
+.featBtn:active {
+    width: 99%;
+    height: 16.5vh;
+    margin: .5% .5% 3.2% .5%;
+}
+
+.featBtn:hover {
+    border: 1px solid #3d69f8;
+    background-color: #79b3ff3b;
+    box-shadow: 0px 0px 2px #5089F9;
 }
 
 .featBtnInfo {
     display: flex;
     flex-direction: column;
+    text-align: left;
+    margin-left: 0px;
+}
+
+.clickedBtn {
+    background-color: #79b3ff14;
+    border: 1px solid #5089F9;
 }
