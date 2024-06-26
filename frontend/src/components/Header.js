@@ -11,7 +11,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 import Logo from '../assets/images/Logo2.png'
 
-function Header({signedIn}) {
+function Header({ signedIn, selectedBtnId }) {
 
     const navi = useNavigate();
 
@@ -28,6 +28,8 @@ function Header({signedIn}) {
         }
         console.log('finished onLoad')
         console.log(signedIn)
+
+        this.document.getElementById(selectedBtnId).classList.add('clicked')
     });
     
 
@@ -39,16 +41,16 @@ function Header({signedIn}) {
                     <img className='logo' src={ Logo } alt='logo' />
                     <p id="hdrTitle" style={ {fontFamily: FONTS.Title, fontSize: '1.4rem', color: COLORS.black}}>Finara</p>
 
-                    <button className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
+                    <button id='home' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
                         <HomeIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>Home
                     </button>
-                    <button className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
+                    <button id='budget' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
                         <AccountBalanceIcon sx={{width: '1.3vw'}}className='hdrIcon'/>Budget
                     </button>
-                    <button className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
+                    <button id='metrics' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
                         <BarChartOutlinedIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>Metrics
                     </button>
-                    <button className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
+                    <button id='invest' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
                         <AttachMoneyIcon sx={{width: '1.4vw'}}className='hdrIcon'/>Investing
                     </button>
                 </div>
