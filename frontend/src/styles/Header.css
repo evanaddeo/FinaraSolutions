@@ -46,6 +46,11 @@
 }
 
 .navBtn:hover {
+    background-color: #585757;
+    color: #eff0f3
+}
+
+.clicked {
     background-color: #34353d;
     color: #eff0f3
 }

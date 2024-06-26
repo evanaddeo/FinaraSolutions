@@ -55,7 +55,7 @@ function Welcome() {
 
     return (
         <div className='container' style={{overflow: 'scroll'}}>
-            <Header signedIn={false}/>
+            <Header signedIn={false} selectedBtnId='home'/>
 
 
             {/* Intro Hero Section*/}
