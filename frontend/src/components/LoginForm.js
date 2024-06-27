@@ -138,8 +138,11 @@ function LoginForm() {
                     </div>
 
                     <div className='optionWrapper' style={{justifyContent: 'flex-end'}}>
-                        <p><a style={{color: '#eff0f3', cursor: 'pointer', fontSize: '.9rem'}}>
-                            Forgot Password?</a>
+                        <p>
+                            <a 
+                                style={{color: '#eff0f3', cursor: 'pointer', fontSize: '.9rem'}}
+                                onClick={ () => { navi('/Forgot-Password') } }>Forgot Password?
+                            </a>
                         </p>
 
                     </div>
