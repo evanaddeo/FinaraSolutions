@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { FONTS, SIZES, COLORS } from '../constants/themes'
 import '../styles/Header.css'
@@ -11,26 +11,27 @@ import SettingsIcon from '@mui/icons-material/Settings';
 
 import Logo from '../assets/images/Logo2.png'
 
+
+// selectedBtnId == home || budget || metrics || invest
 function Header({ signedIn, selectedBtnId }) {
 
     const navi = useNavigate();
 
     const button1Text = signedIn ? 'Sign Out' : 'Log In';
 
-    // Event Listener to display proper buttons
-    // depending on whether user is signed in
-    window.addEventListener('load', function() {
+
+    useEffect(() => { 
+
+        // Execute dynamic hdr updates every time component is rendered
         if (signedIn) {
             document.getElementById('signup').classList.add('hideItem');
         } else {
-            console.log('should remove profile')
             document.getElementById('profile').classList.add('hideItem');
         }
-        console.log('finished onLoad')
-        console.log(signedIn)
 
-        this.document.getElementById(selectedBtnId).classList.add('clicked')
-    });
+        document.getElementById(selectedBtnId).classList.add('clicked');
+
+    }, [signedIn, selectedBtnId]); // Dependency array ensures re-run on changes
     
 
     return (
@@ -41,31 +42,56 @@ function Header({ signedIn, selectedBtnId }) {
                     <img className='logo' src={ Logo } alt='logo' />
                     <p id="hdrTitle" style={ {fontFamily: FONTS.Title, fontSize: '1.4rem', color: COLORS.black}}>Finara</p>
 
-                    <button id='home' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
-                        <HomeIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>Home
+                    <button 
+                        id='home' 
+                        className='navBtn' 
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        onClick={ () => { navi('/Home') } }
+                    >
+                        <HomeIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>
+                        Home
                     </button>
-                    <button id='budget' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
-                        <AccountBalanceIcon sx={{width: '1.3vw'}}className='hdrIcon'/>Budget
+                    <button 
+                        id='budget' 
+                        className='navBtn' 
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        onClick={ () => { navi('/Budget') } }
+                    >
+                        <AccountBalanceIcon sx={{width: '1.3vw'}}className='hdrIcon'/>
+                        Budget
                     </button>
-                    <button id='metrics' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
-                        <BarChartOutlinedIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>Metrics
+                    <button 
+                        id='metrics' 
+                        className='navBtn' 
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        onClick={ () => { navi('/Metrics') } }
+                    >
+                        <BarChartOutlinedIcon sx={{width: '1.4vw', marginBottom: '.2vh'}}className='hdrIcon'/>
+                        Metrics
                     </button>
-                    <button id='invest' className='navBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>
-                        <AttachMoneyIcon sx={{width: '1.4vw'}}className='hdrIcon'/>Investing
+                    <button 
+                        id='invest' 
+                        className='navBtn' 
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        onClick={ () => { navi('/Investing') } }
+                    >
+                        <AttachMoneyIcon sx={{width: '1.4vw'}}className='hdrIcon'/>
+                        Investing
                     </button>
                 </div>
 
                 <div className='hdrProfile'>
                     <p className='secondBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>{button1Text}</p>
                     <button 
-                        id='signUp' 
+                        id='signup' 
                         className='actionBtn' 
                         style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small, marginLeft: '4%'}}
                         onClick={() => { navi('/Signup')}}>
                         Get Started
                     </button>
-                    <button id='profile' className='actionBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small, width: '2.5vw'}}>
+                    <button id='profile' className='actionBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small, marginLeft: '4%'}}>
                         <SettingsIcon sx={{width: '1.4vw'}}className='hdrIcon'/>
+                        Profile
                     </button>
                 </div>
 
