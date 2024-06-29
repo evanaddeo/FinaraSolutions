@@ -54,7 +54,7 @@ function Welcome() {
     };
 
     return (
-        <div className='container' style={{overflow: 'scroll'}}>
+        <div className='container' style={{overflowY: 'scroll'}}>
             <Header signedIn={false} selectedBtnId='home'/>
 
 
