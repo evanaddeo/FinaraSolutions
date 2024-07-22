@@ -10,6 +10,7 @@ import Investing from './pages/Investing'
 import Budget from './pages/Budget'
 import ForgotPwd from './pages/ForgotPwd'
 import PwdConfirmation from './pages/PwdConfirmation'
+import UpdatePassword from './pages/UpdatePassword'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
                 <Route path='Investing' element={ <Investing/> } />
                 <Route path='Forgot-Password' element={ <ForgotPwd/> } />
                 <Route path='Confirm-Password' element={ <PwdConfirmation/> } />
+                <Route path='Update-Password' element={ <UpdatePassword/> } />
             </Routes>
         </Router>
     )
