@@ -81,7 +81,15 @@ function Header({ signedIn, selectedBtnId }) {
                 </div>
 
                 <div className='hdrProfile'>
-                    <p className='secondBtn' style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}>{button1Text}</p>
+                    <p 
+                        className='secondBtn' 
+                        style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small}}
+                        onClick={ () => {
+                            navi('/Login')
+                        }}
+                    >
+                        {button1Text}
+                    </p>
                     <button 
                         id='signup' 
                         className='actionBtn' 
