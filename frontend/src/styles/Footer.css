@@ -1,11 +1,91 @@
 .ftr {
+    margin: 0px;
+    position: relative;
+    border: 1px solid #34353d;
+}
+
+#ftrBody {
     display: flex;
+    flex-direction: column;
+    margin: 3vh 7vw 0vh 7vw;
+}
+
+#ftrContent {
+    display: flex;
+    flex: 1;
     flex-direction: row;
-    height: 8vh;
-    background-color: rgba(255, 255, 255, .6);
-    border-radius: 100px;
-    padding: .2vw 2vw .2vw 2vw;
-    margin: 0vh 7vw 3vh 7vw;
-    width: 81vw;
-    /* box-shadow: 0 0 0.1rem #5089F9; */
+    margin: 0% 4% 1.5% 1%;
+}
+
+#hrDiv {
+    flex: 1;
+}
+
+#horizLine {
+    height: 1px;
+    background-color: rgba(211, 211, 211, 0.334);
+    border: 0px solid red;
+}
+
+#ftrCopyright {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    margin: 0% 4% 0% 1%;
+    justify-content: center;
+}
+
+#companyInfo {
+    display: flex;
+    flex-direction: column;
+    flex: .3;
+}
+
+#name {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    flex: .3;
+}
+
+#ftrLinks {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    flex: .6;
+    justify-content: space-evenly;
+}
+
+.ftrIcon {
+    color: #eff0f37d;
+    margin-left: 3%;
+}
+
+.ftrIcon:hover {
+    color: #5089F9;
+}
+
+.ftrTxt {
+    color: #eff0f3;
+}
+
+.ftrTxt:hover {
+    color: #5089F9;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#socials {
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+#copyright {
+    color: #eff0f3;
+    font-size: .7rem;
+    margin-bottom: 2%;
+    margin-top: 2%;
 }

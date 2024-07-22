@@ -1,0 +1,9 @@
+start js:
+- cd frontend/
+- npm start
+
+activate venv:
+- source path/to/venv/bin/activate
+
+install on venv:
+- pip install pkg_name
