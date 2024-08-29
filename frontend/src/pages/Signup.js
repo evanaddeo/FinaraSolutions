@@ -12,7 +12,7 @@ import 'animate.css/animate.min.css';
 
 import '../styles/LoginSignup.css'
 
-function Signup() {
+export default function Signup() {
     const navi = useNavigate();
 
     return (
@@ -39,5 +39,3 @@ function Signup() {
         </div>
     )
 }
-
-export default Signup

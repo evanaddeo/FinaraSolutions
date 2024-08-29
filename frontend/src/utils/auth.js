@@ -58,7 +58,7 @@ export function signupAuth(signupInfo) {
     const phoneRegex = /^\d{10}$/;
     if (!phoneRegex.test(phoneNumber)) {
         return{success: false, msg: 'Invalid Phone Number', failField: 'phone'};
-    }
+    }       
 
     // Validate password (minimum 8 characters, at least one uppercase, one lowercase, one digit, and one special character)
     const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/;
