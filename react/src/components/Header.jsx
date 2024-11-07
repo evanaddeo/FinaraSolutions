@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
-import { FONTS, SIZES, COLORS } from '../constants/themes'
+import { FONTS, SIZES, COLORS } from '../assets/constants/themes'
 import '../styles/Header.css'
 
 import HomeIcon from '@mui/icons-material/Home';

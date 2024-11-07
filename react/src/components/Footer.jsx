@@ -2,7 +2,7 @@ import React from 'react'
 
 import '../styles/Footer.css'
 import Logo from '../assets/images/Logo2.png'
-import { FONTS, SIZES, COLORS } from '../constants/themes'
+import { FONTS, SIZES, COLORS } from '../assets/constants/themes'
 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

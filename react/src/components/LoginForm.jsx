@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import BudgetWoman from '../assets/images/budgetwoman.jpg'
-import { FONTS, SIZES } from '../constants/themes'
+import { FONTS, SIZES } from '../assets/constants/themes'
 import { Checkbox } from 'primereact/checkbox'
 import { loginAuth } from '../utils/auth.js'
 

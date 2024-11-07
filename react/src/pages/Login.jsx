@@ -4,7 +4,7 @@ import LoginForm from '../components/LoginForm'
 import DotGraphic from '../assets/images/DotGraphic.png'
 import CircleGraphic from '../assets/images/CircleGraphic.png'
 import Logo from '../assets/images/Logo2.png'
-import { FONTS } from '../constants/themes.js'
+import { FONTS } from '../assets/constants/themes.js'
 
 import { ReactNotifications } from 'react-notifications-component'
 import 'react-notifications-component/dist/theme.css'

@@ -14,7 +14,7 @@ import EqualizerIcon from '@mui/icons-material/Equalizer';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 import { useNavigate } from 'react-router-dom'
-import { FONTS, SIZES, COLORS } from '../constants/themes'
+import { FONTS, SIZES, COLORS } from '../assets/constants/themes'
 
 import '../styles/Welcome.css'
 
@@ -73,8 +73,10 @@ function Welcome() {
                     <button 
                         className='actionBtn' 
                         style={ {fontFamily: FONTS.Regular, fontSize: SIZES.small, marginTop: '3%'}}
-                        onClick={() => { navi('/Signup')}}>
-                        Get Started
+                        onClick={() => { navi('/Test-API')}}>
+                        {/* onClick={() => { navi('/Signup')}}> */}
+                        Test API
+                        {/* Get Started */}
                     </button>
                 </div>
 

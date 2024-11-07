@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { useNavigate } from 'react-router-dom'
-import CustomDropdown from './CustomDropdown.js'
-import { usStates, countries } from '../constants/placeLists.js'
+import CustomDropdown from './CustomDropdown'
+import { usStates, countries } from '../assets/constants/data'
 import BudgetWoman from '../assets/images/budgetwoman.jpg'
-import { FONTS, SIZES } from '../constants/themes'
+import { FONTS, SIZES } from '../assets/constants/themes'
 import { updateDropdown1, updateDropdown2, signupAuth } from '../utils/auth.js'
 
 import { Store } from 'react-notifications-component'
