@@ -6,18 +6,31 @@ import os
 from datetime import datetime, timedelta
 from flask_cors import CORS
 
+from flask_mail import Mail
+from flask_sqlalchemy import SQLAlchemy
+from config import Config
+
 app = Flask(__name__)
+app.config.from_object(Config)
 CORS(app)
 
-# Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587
-app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
+# Initialize extensions
+db = SQLAlchemy()
+mail = Mail()
 
-mail = Mail(app)
+def create_app():
+    app = Flask(__name__)
+    app.config.from_object(Config)
+    
+    # Initialize Flask extensions
+    db.init_app(app)
+    mail.init_app(app)
+    
+    # Register blueprints
+    from routes import main
+    app.register_blueprint(main)
+    
+    return app
 
 reset_codes = {}
 
@@ -86,5 +99,6 @@ def update_password():
 #     return {"members": ["Member1", "Mmeber2", "Member3"]}
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
+    app = create_app()
     app.run(debug=True)
