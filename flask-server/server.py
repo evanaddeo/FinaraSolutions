@@ -5,14 +5,11 @@ import string
 import os
 from datetime import datetime, timedelta
 from flask_cors import CORS
+from routes import register_blueprints
 
 from flask_mail import Mail
 from flask_sqlalchemy import SQLAlchemy
 from config import Config
-
-app = Flask(__name__)
-app.config.from_object(Config)
-CORS(app)
 
 # Initialize extensions
 db = SQLAlchemy()
@@ -21,14 +18,13 @@ mail = Mail()
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    CORS(app)
     
     # Initialize Flask extensions
     db.init_app(app)
     mail.init_app(app)
     
-    # Register blueprints
-    from routes import main
-    app.register_blueprint(main)
+    register_blueprints(app)
     
     return app
 
