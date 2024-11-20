@@ -79,20 +79,14 @@ def update_password():
     if not email or not new_password:
         return jsonify({'error': 'Email and new password are required'}), 400
 
-    # Here you would update the user's password in your database
-    # For this example, we'll just simulate a successful update
+    # Update User PWD
+    # Todo: Actually confirm
     
     # Clear the reset code after successful password update
     if email in reset_codes:
         del reset_codes[email]
 
     return jsonify({'message': 'Password updated successfully'}), 200
-
-
-# Members api route
-# @app.route("/members")
-# def members():
-#     return {"members": ["Member1", "Mmeber2", "Member3"]}
 
 
 if __name__ == '__main__':
