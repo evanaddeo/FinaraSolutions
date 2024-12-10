@@ -2,8 +2,16 @@
 from flask import Blueprint, jsonify, request
 from models import db, User, EmploymentInfo
 from werkzeug.security import generate_password_hash, check_password_hash
+import random
+import string
+from routes import routes_bp
 
-routes_bp = Blueprint('routes', __name__)
+
+
+reset_codes = {}
+
+def generate_reset_code():
+    return ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
 
 @routes_bp.route('/')  # Root route
 def home():

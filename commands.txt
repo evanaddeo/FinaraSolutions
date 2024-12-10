@@ -7,3 +7,12 @@ activate venv:
 
 install on venv:
 - pip install pkg_name
+
+
+
+POSTGRES
+- psql postgres
+\l = list databases
+\c DATABASE = switch to DATABASE
+\dt = list all tables in the database
+\d TABLE = show table structure
